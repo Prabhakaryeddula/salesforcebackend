@@ -1,0 +1,27 @@
+[dotenv@17.2.3] injecting env (7) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+Server running → http://localhost:3000
+GET  /accounts?classValue=10&sectionValue=A
+POST /attendance
+[GET /accounts] params: [Object: null prototype] { classValue: '\\' }
+[SF] Authenticated → https://orgfarm-a598286fe4-dev-ed.develop.my.salesforce.com
+yyyyyyyyyyyyy
+[DESCRIBE] resolved fields: {
+  classField: 'Current_Class__c',
+  sectionField: 'Section__c',
+  ts: 1768241935647
+}
+Current_Class__c ${escapeSOQL(classValue)}
+Check herreeeeee
+[SOQL] SELECT Id, Name, AccountNumber, Current_Class__c, Section__c
+                FROM Account
+                WHERE Current_Class__c = '\\' ORDER BY Name ASC LIMIT 300
+[OK] Found 0 students
+[GET /accounts] params: [Object: null prototype] { classValue: '10', sectionValue: 'A' }
+[SF] Authenticated → https://orgfarm-a598286fe4-dev-ed.develop.my.salesforce.com
+Current_Class__c ${escapeSOQL(classValue)}
+Check herreeeeee
+[SOQL] SELECT Id, Name, AccountNumber, Current_Class__c, Section__c
+                FROM Account
+                WHERE Current_Class__c = '10' AND Section__c = 'A' ORDER BY Name ASC LIMIT 300
+[OK] Found 2 students
+^C
