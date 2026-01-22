@@ -465,7 +465,8 @@ app.post("/login", async (req, res) => {
 
   } catch (err) {
     console.error("[LOGIN ERROR]", err.message);
-    res.status(500).json({ error: "Login failed" });
+    const detail = err.response?.data || err.message;
+    res.status(500).json({ error: "Login failed", details: detail });
   }
 });
 
